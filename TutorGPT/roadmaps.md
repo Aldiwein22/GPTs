@@ -42,91 +42,110 @@
 
 ## Mathematik 🧮
 
-    1. Elementare Logik 🧠
-        - Aussagenlogik: Verknüpfung von Wahrheitswerten ✔️
-        - Prädikatenlogik: Logik erster und höherer Stufe 🎓
-        - Logische Schlussfolgerungen: Deduktion, Induktion, Abduktion 🔄
-    2. Stellenwertsysteme 🔢
-        - Dezimalsystem: Basis 10 🔟
-        - Binärsystem: Basis 2, verwendet in der Informatik 💻
-        - Hexadezimalsystem: Basis 16, ebenfalls in der Informatik gebräuchlich 🖥️
-    3. Rechnen in Registern 🧮
-        - Registermaschinen: Theoretisches Modell für Berechnungen 📚
-        - Speicheroperationen: Laden, Speichern, Verschieben 💾
-        - Arithmetische Operationen: Addieren, Subtrahieren ➕➖
-    4. Mengen 📦
-        - Mengenoperationen: Vereinigung, Schnitt, Differenz ➕➖
-        - Mengenrelationen: Teilmengen, Gleichheit 👥
-        - Kartesisches Produkt: Bildung von geordneten Paaren 🔄
-    5. Mathematische Beweise 📝
-        - Direkter Beweis: Schrittweise Herleitung ➡️
-        - Indirekter Beweis: Widerspruchsbeweis ❌
-        - Beweis durch Induktion: Beweisverfahren für natürliche Zahlen 🔢
-    6. Kombinatorik 🧩
-        - Permutationen: Anordnungen von Objekten 🔀
-        - Kombinationen: Auswahl von Objekten ohne Berücksichtigung der Reihenfolge 🔄
-        - Variationen: Auswahl von Objekten mit Berücksichtigung der Reihenfolge 🔀
-    7. Infinitesimalrechnung 📈
-        - Grenzwerte: Annäherung an einen bestimmten Wert ➡️
-        - Ableitungen: Änderungsrate einer Funktion ⏫
-        - Integrale: Flächenberechnung unter einer Kurve 📉
-    8. Funktionen 📊
-        - Lineare Funktionen: Funktionen ersten Grades 1️⃣
-        - Quadratische Funktionen: Funktionen zweiten Grades 2️⃣
-        - Rationale Funktionen: Quotienten von Polynomen ➗
-    9. Stetige Funktionen ➡️
-        - Definition der Stetigkeit: Keine Sprünge oder Lücken ❌
-        - Zwischenwertsatz: Existenz von Zwischenwerten 🔄
-        - Stetigkeitsprüfung: Anwendung von Stetigkeitskriterien ✔️
-    10. Polynome 📐
-        - Grad eines Polynoms: Höchste Potenz der Variablen 🔝
-        - Nullstellen: Lösungen der Gleichung \(P(x) = 0\) 0️⃣
-        - Polynomdivision: Teilen von Polynomen ➗
-    11. Gebrochenrationale Funktionen 📉
-        - Asymptoten: Annäherung an eine Gerade ohne Berührung ➡️
-        - Definitionsbereich: Menge aller zulässigen x-Werte 🔄
-        - Verhalten im Unendlichen: Grenzwertbetrachtung ➡️
-    12. Anwendung: Das Sekantenverfahren 📐
-        - Iteratives Verfahren: Annäherung an Nullstellen ➡️
-        - Konvergenz: Geschwindigkeit der Annäherung ⏩
-        - Fehlerabschätzung: Bestimmung der Genauigkeit ✔️
-    13. Differentialrechnung 📈
-        - Tangentensteigung: Steigung der Tangente an einem Punkt ⬆️
-        - Höhere Ableitungen: Krümmung und Wendepunkte ↩️
-        - Optimierung: Bestimmung von Extremwerten 🔝
-    14. Taylorpolynom 📚
-        - Taylorreihe: Annäherung von Funktionen durch Polynome ➡️
-        - Restglied: Abschätzung des Fehlers ❌
-        - Anwendungen: Näherungsformeln in Physik und Ingenieurwesen 🏗️
-    15. Kurvendiskussion 📉
-        - Symmetrie: Achsen- und Punktsymmetrie ↔️
-        - Monotonie: Wachstumsverhalten der Funktion ⬆️
-        - Krümmungsverhalten: Konvex, konkav, Wendepunkte ↩️
-    16. Integralrechnung 📚
-        - Bestimmtes Integral: Berechnung von Flächeninhalten 📐
-        - Unbestimmtes Integral: Stammfunktionen 🔄
-        - Anwendungen: Volumenberechnung, Arbeit 💼
-    17. Integrationsmethoden 📝
-        - Partielle Integration: Produktregel rückwärts ↩️
-        - Substitutionsmethode: Variablenwechsel 🔀
-        - Integration durch Partialbruchzerlegung: Zerlegung in einfachere Integrale ➗
-    18. Funktionen mehrerer Veränderlicher 📊
-        - Partielle Ableitungen: Ableitungen nach einzelnen Variablen ➡️
-        - Gradient: Vektor der partiellen Ableitungen ➡️
-        - Richtungsableitung: Ableitung in eine bestimmte Richtung ➡️
-    19. Mehrfachintegrale 📚
-        - Doppelintegrale: Integration über zweidimensionale Bereiche 📐
-        - Dreifachintegrale: Integration über dreidimensionale Bereiche 📦
-        - Anwendungen: Schwerpunktberechnung, Massenverteilung ⚖️
-    20. Partielle Differenzierbarkeit 📈
-        - Differenzierbarkeit: Existenz von partiellen Ableitungen ✔️
-        - Stetige Differenzierbarkeit: Stetigkeit der partiellen Ableitungen ➡️
-        - Satz von Schwarz: Vertauschbarkeit der Ableitungsreihenfolge 🔀
-    21. Anwendung: Fehler beim Rechnen mit Zahlen ❌
-        - Rundungsfehler: Auswirkungen von Rundungen auf Berechnungen ➖
-        - Abschneidefehler: Verlust von Nachkommastellen ➖
-        - Fehlerfortpflanzung: Auswirkungen von Eingangsfehlern auf das Ergebnis ❌
-    22. Gleitpunktzahlen 🔢
-        - IEEE-Standard: Format für Gleitpunktdarstellung 📝
-        - Normalisierung: Eindeutige Darstellung von Zahlen ➡️
-        - Maschinengenauigkeit: Kleinster darstellbarer Unterschied zwischen zwei Zahlen ➖
+    Probeklausur 📜
+    1. Histogramme und Datenauswertung:
+        Fähigkeit, Histogramme zu interpretieren und mathematische Berechnungen auf Basis gegebener Daten durchzuführen.
+    2. Wahrscheinlichkeitsrechnung und Statistik:
+        Kenntnisse in der Berechnung von Wahrscheinlichkeiten, insbesondere bei gleichverteilten und exponentialverteilten Zufallsvariablen, sowie das Verständnis von stochastischer Unabhängigkeit.
+    3. Bedingte Wahrscheinlichkeiten und Bayes-Theorem:
+        Verstehen und Anwenden der bedingten Wahrscheinlichkeit und des Bayes-Theorems in praktischen Kontexten.
+    4. Schätzung und Wahrscheinlichkeitsverteilungen:
+        Fähigkeiten in der Schätzung von Parametern und der Anwendung von Wahrscheinlichkeitsverteilungen in Alltagssituationen.
+    5. Korrelation und Datenanalyse:
+        Kenntnisse in der Bestimmung und Interpretation von Korrelationskoeffizienten.
+    6. Erwartungswert und Spieltheorie:
+        Verständnis des Erwartungswertes und seiner Anwendung in Spielsituationen, einschließlich der Bewertung der Fairness von Spielen.
+    7. Lineare rückgekoppelte Schieberegister (LFSR):
+        Verständnis von LFSRs, ihrer Funktionsweise und Anwendung in der Datenverarbeitung.
+    8. Normalverteilung und statistische Analyse:
+        Kenntnisse in der Anwendung der Normalverteilung und der Nutzung von Standardnormalverteilungstabellen für Wahrscheinlichkeitsberechnungen.
+
+    Semesterübersicht 📚
+        1. Elementare Logik 🧠
+            - Aussagenlogik: Verknüpfung von Wahrheitswerten ✔️
+            - Prädikatenlogik: Logik erster und höherer Stufe 🎓
+            - Logische Schlussfolgerungen: Deduktion, Induktion, Abduktion 🔄
+        2. Stellenwertsysteme 🔢
+            - Dezimalsystem: Basis 10 🔟
+            - Binärsystem: Basis 2, verwendet in der Informatik 💻
+            - Hexadezimalsystem: Basis 16, ebenfalls in der Informatik gebräuchlich 🖥️
+        3. Rechnen in Registern 🧮
+            - Registermaschinen: Theoretisches Modell für Berechnungen 📚
+            - Speicheroperationen: Laden, Speichern, Verschieben 💾
+            - Arithmetische Operationen: Addieren, Subtrahieren ➕➖
+        4. Mengen 📦
+            - Mengenoperationen: Vereinigung, Schnitt, Differenz ➕➖
+            - Mengenrelationen: Teilmengen, Gleichheit 👥
+            - Kartesisches Produkt: Bildung von geordneten Paaren 🔄
+        5. Mathematische Beweise 📝
+            - Direkter Beweis: Schrittweise Herleitung ➡️
+            - Indirekter Beweis: Widerspruchsbeweis ❌
+            - Beweis durch Induktion: Beweisverfahren für natürliche Zahlen 🔢
+        6. Kombinatorik 🧩
+            - Permutationen: Anordnungen von Objekten 🔀
+            - Kombinationen: Auswahl von Objekten ohne Berücksichtigung der Reihenfolge 🔄
+            - Variationen: Auswahl von Objekten mit Berücksichtigung der Reihenfolge 🔀
+        7. Infinitesimalrechnung 📈
+            - Grenzwerte: Annäherung an einen bestimmten Wert ➡️
+            - Ableitungen: Änderungsrate einer Funktion ⏫
+            - Integrale: Flächenberechnung unter einer Kurve 📉
+        8. Funktionen 📊
+            - Lineare Funktionen: Funktionen ersten Grades 1️⃣
+            - Quadratische Funktionen: Funktionen zweiten Grades 2️⃣
+            - Rationale Funktionen: Quotienten von Polynomen ➗
+        9. Stetige Funktionen ➡️
+            - Definition der Stetigkeit: Keine Sprünge oder Lücken ❌
+            - Zwischenwertsatz: Existenz von Zwischenwerten 🔄
+            - Stetigkeitsprüfung: Anwendung von Stetigkeitskriterien ✔️
+        10. Polynome 📐
+            - Grad eines Polynoms: Höchste Potenz der Variablen 🔝
+            - Nullstellen: Lösungen der Gleichung \(P(x) = 0\) 0️⃣
+            - Polynomdivision: Teilen von Polynomen ➗
+        11. Gebrochenrationale Funktionen 📉
+            - Asymptoten: Annäherung an eine Gerade ohne Berührung ➡️
+            - Definitionsbereich: Menge aller zulässigen x-Werte 🔄
+            - Verhalten im Unendlichen: Grenzwertbetrachtung ➡️
+        12. Anwendung: Das Sekantenverfahren 📐
+            - Iteratives Verfahren: Annäherung an Nullstellen ➡️
+            - Konvergenz: Geschwindigkeit der Annäherung ⏩
+            - Fehlerabschätzung: Bestimmung der Genauigkeit ✔️
+        13. Differentialrechnung 📈
+            - Tangentensteigung: Steigung der Tangente an einem Punkt ⬆️
+            - Höhere Ableitungen: Krümmung und Wendepunkte ↩️
+            - Optimierung: Bestimmung von Extremwerten 🔝
+        14. Taylorpolynom 📚
+            - Taylorreihe: Annäherung von Funktionen durch Polynome ➡️
+            - Restglied: Abschätzung des Fehlers ❌
+            - Anwendungen: Näherungsformeln in Physik und Ingenieurwesen 🏗️
+        15. Kurvendiskussion 📉
+            - Symmetrie: Achsen- und Punktsymmetrie ↔️
+            - Monotonie: Wachstumsverhalten der Funktion ⬆️
+            - Krümmungsverhalten: Konvex, konkav, Wendepunkte ↩️
+        16. Integralrechnung 📚
+            - Bestimmtes Integral: Berechnung von Flächeninhalten 📐
+            - Unbestimmtes Integral: Stammfunktionen 🔄
+            - Anwendungen: Volumenberechnung, Arbeit 💼
+        17. Integrationsmethoden 📝
+            - Partielle Integration: Produktregel rückwärts ↩️
+            - Substitutionsmethode: Variablenwechsel 🔀
+            - Integration durch Partialbruchzerlegung: Zerlegung in einfachere Integrale ➗
+        18. Funktionen mehrerer Veränderlicher 📊
+            - Partielle Ableitungen: Ableitungen nach einzelnen Variablen ➡️
+            - Gradient: Vektor der partiellen Ableitungen ➡️
+            - Richtungsableitung: Ableitung in eine bestimmte Richtung ➡️
+        19. Mehrfachintegrale 📚
+            - Doppelintegrale: Integration über zweidimensionale Bereiche 📐
+            - Dreifachintegrale: Integration über dreidimensionale Bereiche 📦
+            - Anwendungen: Schwerpunktberechnung, Massenverteilung ⚖️
+        20. Partielle Differenzierbarkeit 📈
+            - Differenzierbarkeit: Existenz von partiellen Ableitungen ✔️
+            - Stetige Differenzierbarkeit: Stetigkeit der partiellen Ableitungen ➡️
+            - Satz von Schwarz: Vertauschbarkeit der Ableitungsreihenfolge 🔀
+        21. Anwendung: Fehler beim Rechnen mit Zahlen ❌
+            - Rundungsfehler: Auswirkungen von Rundungen auf Berechnungen ➖
+            - Abschneidefehler: Verlust von Nachkommastellen ➖
+            - Fehlerfortpflanzung: Auswirkungen von Eingangsfehlern auf das Ergebnis ❌
+        22. Gleitpunktzahlen 🔢
+            - IEEE-Standard: Format für Gleitpunktdarstellung 📝
+            - Normalisierung: Eindeutige Darstellung von Zahlen ➡️
+            - Maschinengenauigkeit: Kleinster darstellbarer Unterschied zwischen zwei Zahlen ➖

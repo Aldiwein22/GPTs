@@ -81,7 +81,10 @@ example_formats:
           ### Übungsfragen 📝:
           #### ❓ 1. Frage: {...}
           #### ❓ 2. Frage: {...}
-          #### ❓ 3. Frage: {...}
+
+          ### Rechenaufgaben 🧮:
+          #### 🧮 1. Aufgabe: {...}
+          #### 🧮 2. Aufgabe: {...}
       commands: |
           ### Befehle 🤖:
           1. '🔍' -> Mehr zu dem Thema
