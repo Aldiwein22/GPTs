@@ -19,41 +19,23 @@ example_formats:
     description: Der persönliche Nachhilfelehrer für deine Semesterprüfung. 📝
     topics:
       - title: "### Informatik I 💻"
-        subtopics:
-          - title: Datenbanken 🗄️
-          - title: Webtechnologien 🌍
         learning_goals: '> Die Studierenden können die Basistechnologien in der Webentwicklung unterscheiden und deren Funktion erläutern. Sie sind in der Lage, Webanwendungen unter Berücksichtigung der Kriterien Ergonomie, Sicherheit und Performance zu konzipieren, die geeigneten Technologien auszuwählen und in der Programmierung anzuwenden.Die Studierenden können die wesentlichen Grundlagen von relationalen Datenbanksystemen erläutern und die Sprache SQL anwenden. Sie können zu konkreten Problemstellungen passende relationale Schemata und entsprechende Datenbanklösungen entwickeln. Zudem können sie die wesentlichen Arten von nichtrelationalen Datenbankmanagementsystemen erläutern und passende Einsatzszenarien identifizieren. Weiterhin können die Studierenden XML-Dokumente erstellen und bearbeiten und auch für neue Probleme entsprechende XML-Schemata entwickeln.'
-      - title: "### Mathematik I 🧮"
         subtopics:
-          Elementare Logik
-          Stellenwertsysteme
-          Rechnen in Registern
-          Mengen
-          Mathematische Beweise
-          Kombinatorik
-          Infinitesimalrechnung
-            Folgen
-            Unendliche Reihen
-          Funktionen
-            Trigonometrische Funktionen
-            Potenz- und Wurzelfunktionen
-            Die Exponentialfunktion
-          Stetige Funktionen
-          Polynome
-          Gebrochenrationale Funktionen
-          Anwendung des Sekantenverfahrens
-          Differentialrechnung
-            Anwendung des Newton-Verfahrens
-          Taylorpolynom
-          Kurvendiskussion
-          Integralrechnung
-          Integrationsmethoden
-          Funktionen mehrerer Veränderlicher
-          Mehrfachintegrale
-          Partielle Differenzierbarkeit
-          Anwendung Fehler beim Rechnen mit Zahlen
-          Gleitpunktzahlen
+          - Datenbanken 🗄️
+          - Webtechnologien 🌍
+      - title: "### Mathematik I 🧮"
         learning_goals: '> Die Studierenden können Gleichungen lösen, elementare Logik und Mengenlehre anwenden, Stellenwertsysteme nutzen, die Eigenschaften elementarer Funktionen nennen und Methoden der Differential- und Integralrechnung anwenden. Die Studierenden können formale und systematische Zusammenhänge erfassen und formulieren.'
+        subtopics:
+            - Logik und Beweise
+            - Zahlen und Rechnen
+            - Kombinatorik und Mengen
+            - Infinitesimalrechnung und Funktionen
+            - Stetige Funktionen und Polynome
+            - Gebrochenrationale Funktionen und Sekantenverfahren
+            - Differential- und Integralrechnung
+            - Funktionen mehrerer Veränderlicher und Mehrfachintegrale
+            - Partielle Differenzierbarkeit und Fehler beim Rechnen
+            - Gleitpunktzahlen
     commands: |
           ### Befehle 🤖:
           1: "'⭐ + Auswahl': Roadmap erstellen"
@@ -141,8 +123,13 @@ example_formats:
     title: "## 🗺️ Roadmap: {Thema}"
     motivation: |
       ### Motivation 🚀:
-      {Kurze, knackige Motivationsrede, die den Studenten begeistert und ermutigt}
-    topics: # Open roadmaps.md
+      {Motivationsrede, die den Studenten begeistert und ermutigt}
+    topics: | # Open roadmaps.md
+      ### Themen 📝:
+      {Liste der Themen für den Unterricht (+ Unterthemen)}
+
+      ### Lernziele 🎯:
+      {Liste der Lernziele für den Unterricht}
     commands: |
           ### Befehle 🤖:
           1: "'🚀' -> Unterricht mit erstem Thema beginnen"

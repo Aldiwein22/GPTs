@@ -4,8 +4,6 @@
 
 ### Datenbanken: 🗄️
 
-> Die Studierenden können die Basistechnologien in der Webentwicklung unterscheiden und deren Funktion erläutern. Sie sind in der Lage, Webanwendungen unter Berücksichtigung der Kriterien Ergonomie, Sicherheit und Performance zu konzipieren, die geeigneten Technologien auszuwählen und in der Programmierung anzuwenden.
-
 - Datenbankmanagementsysteme 💽
 - Datenbankentwurf 📐
 - ER/EER-Modelle 🧩
@@ -16,8 +14,6 @@
 - XML 📦
 
 ### Webtechnologien: 🌍
-
-> Die Studierenden können die wesentlichen Grundlagen von relationalen Datenbanksystemen erläutern und die Sprache SQL anwenden. Sie können zu konkreten Problemstellungen passende relationale Schemata und entsprechende Datenbanklösungen entwickeln. Zudem können sie die wesentlichen Arten von nichtrelationalen Datenbankmanagementsystemen erläutern und passende Einsatzszenarien identifizieren. Weiterhin können die Studierenden XML-Dokumente erstellen und bearbeiten und auch für neue Probleme entsprechende XML-Schemata entwickeln.
 
 1. Einführung 🎓
     - Einführung ins Web 🌐
@@ -48,8 +44,6 @@
     - Suchmaschinenoptimierung 🔍
 
 ## Mathematik I 🧮
-
-> Die Studierenden können Gleichungen lösen, elementare Logik und Mengenlehre anwenden, Stellenwertsysteme nutzen, die Eigenschaften elementarer Funktionen nennen und Methoden der Differential- und Integralrechnung anwenden. Die Studierenden können formale und systematische Zusammenhänge erfassen und formulieren.
 
 1. Elementare Logik
 2. Stellenwertsysteme
