@@ -133,10 +133,10 @@ code_examples:
     max_pages = doc.pageCount
     step = max(3, ceil(max_pages / 100))
 
-    full_pdf = ["## Page " + str(i) + "of " + str(max_pages) + "\n\n" + page.get_text() for i, page in enumerate(doc)]
+    full_pdf = ["## Page " + str(i) + " of " + str(max_pages) + "\n\n" + page.get_text() for i, page in enumerate(doc)]
     doc.close()
     
-    preview_content = full_pdf[::step]
+    preview_content = [page[:500] for i, page in enumerate(full_pdf) if i % step == 0]
 
     preview_content[:len(preview_content)] # NEVER CHANGE THIS LINE
     ```
