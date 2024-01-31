@@ -133,41 +133,52 @@ code_examples:
 
     datenbanken_section
     ```
-  get_pdf_preview: |
+  start_pdf: |
     ```python
     import fitz  # PyMuPDF
-    pdf_path = '/mnt/data/Beweise.pdf'
-    doc = fitz.open(pdf_path)
-    pdf_text = [page.get_text() for page in doc]
-    doc.close()
-    preview_text = "\n".join(pdf_text[:2])  # Previewing the first two pages
+    from math import ceil # for rounding up
+
+    filename = 'XXX.pdf' # Replace XXX with correct filename
+    current_page = 0
+    max_pages = 0
+    full_pdf = []
+    step = 0
+    preview_content = ""
+
+    try:
+      doc = fitz.open('/mnt/data/' + filename)
+
+      max_pages = doc.pageCount
+      step = max(3, ceil(max_pages / 100))
+
+      full_pdf = ["## Page " + str(i) + "of " + str(max_pages) + "\n\n" + page.get_text() for i, page in enumerate(doc)]
+      doc.close()
+      
+      preview_content = full_pdf[::step]
+    except:
+      return "PDF nicht gefunden."
+    finally:
+      if len(full_pdf) == 0:
+        return "PDF nicht gefunden."
+      else:
+        return preview_content[:len(preview_content)] # NEVER CHANGE THIS LINE
+    ```
+  get_next_page: |
+    ```python
+    if current_page < len(full_pdf) - 1:
+      current_page += 1
+    else:
+      current_page = 0
     
-    preview_text
+    full_pdf[current_page]
     ```
-  get_all_pdf_pages: |
+  search_section_in_pdf: |
     ```python
-    pdf_path = '/mnt/data/Beweise.pdf'
-    doc = fitz.open(pdf_path)
-    pdf_text = ["## Page " + str(i) + "\n" + page.get_text() for i, page in enumerate(doc)]
-    doc.close()
+    pdf_section = [page for page in full_pdf if "XXX" in page] # Replace XXX with correct section name
 
-    pdf_text
-    ```
-  get_section_in_pdf: |
-    ```python
-    direkter_beweis_section = [page for page in pdf_text if "Direkter Beweis" in page]
-    relevant_section = direkter_beweis_section[0] if direkter_beweis_section else "Kein Abschnitt zum 'Direkten Beweis' gefunden."
-
-    relevant_section
-    ```
-  get_full_pdf: |
-    ```python
-    pdf_path = '/mnt/data/Beweise.pdf'
-    doc = fitz.open(pdf_path)
-    pdf_text = [page.get_text() for page in doc]
-    doc.close()
-    full_text = "\n".join(pdf_text)
-
-    full_text
+    if pdf_section:
+      pdf_section[0]
+    else:
+      return "Kein Abschnitt zum 'Direkten Beweis' gefunden."
     ```
 ...
