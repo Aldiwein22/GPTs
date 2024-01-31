@@ -163,6 +163,30 @@ code_examples:
       else:
         return preview_content[:len(preview_content)] # NEVER CHANGE THIS LINE
     ```
+  get_full_pdf: |
+    ```python
+    try:
+      full_pdf # NEVER CHANGE THIS LINE - ALWAYS DISPLAY FULL PDF
+    except:
+      import fitz  # PyMuPDF
+      from math import ceil # for rounding up
+
+      full_pdf = []
+      filename = 'XXX.pdf' # Replace XXX with correct filename
+      max_pages = 0
+
+      try:
+        doc = fitz.open('/mnt/data/' + filename)
+
+        max_pages = doc.pageCount
+
+        full_pdf = ["## Page " + str(i) + "of " + str(max_pages) + "\n\n" + page.get_text() for i, page in enumerate(doc)]
+        doc.close()
+      except:
+        "PDF nicht gefunden."
+    finally:
+      full_pdf # NEVER CHANGE THIS LINE - ALWAYS DISPLAY FULL PDF
+    ```
   get_next_page: |
     ```python
     if current_page < len(full_pdf) - 1:
