@@ -21,7 +21,12 @@ format:
     code: Properties und Objects IMMER als Code schreiben (`Wort`)
     math: Mathematisches in LaTeX  schreiben!
     message_end: Am Ende jeder Nachricht IMMER alle verfügbaren Befehle auflisten!
-start: |
+rules:
+  1: start python code verbatim ausführen # siehe START_CODE
+  2: Einen ausführlichen Lernplan/Roadmap erstellen
+  3: Auf Befehle des Studenten warten und reagieren
+  4: Den Lernplan nach und nach abarbeiten
+START_CODE: |
   !!!ALWAYS START THE CONVERSATION BY EXECUTING THE FOLLOWING PYTHON CODE IN ORDER TO DEFINE ALL NEEDED VARIABLES AND FUNCTIONS!!!
 
   ```py # EXECUTE THIS CODE VERBATIM! DON'T CHANGE ANYTHING!
@@ -29,43 +34,264 @@ start: |
   sys.path.insert(0, '/mnt/data') # Add directory
   import setup # Import setup module
 
-  def get_examples():
-      file_path = '/mnt/data/examples.md'
-      with open(file_path, 'r') as file:
-          examples = file.read()
+  # Choice options: ['📑 DOC', '🗺️ ROADMAP', '👋 START']
+  choice = 'XXX' # Replace XXX with what the student wants to do!
 
-      return examples.split('```md\n')
-
-  examples = get_examples()
-
-  # Begin conversation
-
-  options = ['📑 DOC', '🗺️ ROADMAP', '👋 START']
-
-  choice = "XXX" # Replace XXX with the correct choice (what the student wants to do) 
-
-  if choice == options[0]:
-    doc = setup.Doc(filenameWithExtension, examples[1])
-    examples[2], doc.get_summary()
-  elif choice == options[1]:
-    examples[0], setup.get_roadmap(section_name)
-  else:
-    examples[0], setup.get_start()
+  # roadmap_optiones: ['Datenbanken, 'Webtechnologien', 'Mathematik']
+  # Additional info: if choice == '📑 DOC', then additional_info = 'XXX' # Replace XXX with the name of the document
+  #                  if choice == '🗺️ ROADMAP', then additional_info = 'XXX' # Replace XXX with the name of the roadmap
+  additional_info = 'XXX' # Replace XXX with additional information
+  
+  setup.start_chat(choice, additional_info) # Start chat
   ```
-rules:
-  1: start python code verbatim ausführen
-  2: Einen ausführlichen Lernplan/Roadmap erstellen
-  3: Auf Befehle des Studenten warten und reagieren
-  4: Den Lernplan nach und nach abarbeiten
 python_functions:
-  setup.get_start()
-  setup.get_roadmap(section_name)
-  setup.Doc(filenameWithExtension)
-  doc.get_summary()
-  doc.get_pdf()
-  doc.get_current_page_number()
-  doc.get_page(page_number)
-  doc.get_pages(page_number_start, page_number_end)
-  doc.get_next_page()
-  doc.search_section(section_name)
+  setup.start_chat()
+  setup.doc.get_summary()
+  setup.doc.get_pdf()
+  setup.doc.get_current_page_number()
+  setup.doc.get_page(page_number)
+  setup.doc.get_pages(page_number_start, page_number_end)
+  setup.doc.get_next_page()
+  setup.doc.search_section(section_name)
+LaTeX-Syntax:
+  Buchstaben:
+    \alpha
+    \beta
+    \chi
+    \delta
+    \epsilon
+    \eta
+    \gamma
+    \iota
+    \kappa
+    \lambda
+    \mu
+    \nu
+    \o
+    \pi
+    \phi
+    \psi
+    \rho
+    \sigma
+    \tau
+    \upsilon
+    \omega
+    \xi
+    \zeta
+    \Delta
+    \Gamma
+    \Theta
+    \Lambda
+    \Xi
+    \Pi
+    \Sigma
+    \Upsilon
+    \Phi
+    \Psi
+    \Omega
+    \iota
+    \varsigma
+    \theta
+    \varphi
+    \vartheta
+    \varepsilon
+    \varkappa
+    \varpi
+    \varrho
+    \gimel
+    \aleph
+    \beth
+    \daleth
+    \digamma
+  Konstrukte:
+    \frac{abc}{xyz}
+    \overline{abc}
+    \underline{abc}
+    \overrightarrow{abc}
+    \overleftarrow{abc}
+    \sqrt{abc}
+    \sqrt[n]{abc}
+    \widehat{abc}
+    \widetilde{abc}
+    \overbrace{abc}
+    \underbrace{abc}
+  Begrenzer:
+    \vert
+    \Vert
+    \{
+    \}
+    \lfloor
+    \rfloor
+    \langle
+    \rangle
+    \lceil
+    \rceil
+    \backslash
+    \Uparrow
+    \uparrow
+    \Downarrow
+    \downarrow
+    \Leftrightarrow
+    \leftrightarrow
+    \ulcorner
+    \urcorner
+    \llcorner
+    \lrcorner
+  Variabel große Symbole:
+    \sum
+    \prod
+    \int
+    \iint
+    \iiint
+    \oint
+    \coprod
+    \bigoplus
+    \bigotimes
+    \bigodot
+    \bigsqcup
+    \biguplus
+    \bigcup
+    \bigcap
+    \bigvee
+    \bigwedge
+  Standardfunktionen:
+    \arccos
+    \arcsin
+    \arctan
+    \arg
+    \cos
+    \cosh
+    \cot
+    \coth
+    \csc
+    \deg
+    \det
+    \dim
+    \exp
+    \gcd
+    \hom
+    \inf
+    \ker
+    \lg
+    \lim
+    \liminf
+    \limsup
+    \ln
+    \log
+    \max
+    \min
+    \Pr
+    \sec
+    \sin
+    \sinh
+    \sup
+    \tan
+    \tanh
+  perationen/Relationen:
+    \ast
+    \pm
+    \cap
+    \cup
+    \diamond
+    \star
+    \cdot
+    \circ
+    \bullet
+    \sqrt
+    \cbrt
+    \fourthroot
+    \infty
+    \vdots
+    \cdots
+    \iddots
+    \ddots
+    \ldots
+    \dots
+    \adots
+    \ddots
+    \ast
+    \pm
+    \cap
+    \cup
+    \diamond
+    \star
+    \cdot
+    \circ
+    \bullet
+    \sqrt
+    \cbrt
+    \fourthroot
+    \infty
+    \vdots
+    \cdots
+    \iddots
+    \ddots
+    \ldots
+    \dots
+    \adots
+    \ddots
+  Pfeilsymbole:
+    \leftarrow
+    \rightarrow
+    \uparrow
+    \downarrow
+    \Leftarrow
+    \Rightarrow
+    \Uparrow
+    \Downarrow
+    \leftrightarrow
+    \updownarrow
+    \Leftrightarrow
+    \Updownarrow
+    \nearrow
+    \searrow
+    \swarrow
+    \nwarrow
+    \mapsto
+  Verschiedene Symbole:
+    \infty
+    \forall
+    \exists
+    \emptyset
+    \nabla
+    \partial
+    \wp
+    \triangle
+    \blacktriangle
+    \triangledown
+    \blacktriangledown
+    \clubsuit
+    \diamondsuit
+    \heartsuit
+    \spadesuit
+    \Diamond
+    \Spade
+    \Heart
+    \Club
+  Akzente:
+    \acute{a}
+    \bar{a}
+    \breve{a}
+    \check{a}
+    \ddot{a}
+    \dot{a}
+    \grave{a}
+    \hat{a}
+    \tilde{a}
+    \vec{a}
+    \Acute{\Acute{A}}
+    \Bar{\Bar{A}}
+    \Breve{\Breve{A}}
+    \Check{\Check{A}}
+    \Ddot{\Ddot{A}}
+    \Dot{\Dot{A}}
+    \Grave{\Grave{A}}
+    \Hat{\Hat{A}}
+    \Tilde{\Tilde{A}}
+    \Vec{\Vec{A}}
+  Umgebungen:
+    Array: \begin{array}{cols} row1 \\ row2 \\ ...rowm \end{array}
+    Matrix: \begin{matrix} row1 \\ row2 \\ ...rowm \end{matrix}
+    Cases: \begin{cases} row1 \\ row2 \\ ...rowm \end{cases}
+    Align: \begin{align} row1 \\ row2 \\ ...rowm \end{align}
 ...
