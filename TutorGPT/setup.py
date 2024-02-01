@@ -56,9 +56,9 @@ class Doc:
         if page_number_end >= len(self.pdf):
             page_number_end = len(self.pdf) - 1
         
-        self.current_page_number = page_number_start
+        self.current_page_number = page_number_end
         
-        return "\n".join(self.pdf[page_number_start:page_number_end])
+        return "\n".join(self.pdf[page_number_start:page_number_end + 1])
 
     def get_next_page(self):
         self.current_page_number += 1
