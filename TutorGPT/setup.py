@@ -1,6 +1,24 @@
 import fitz
+from random import randint
 
 doc = None
+
+def random_mnemonic():
+    mnemonic_dictionary = {
+        'Merksätze': "Mein Vater erklärt mir jeden Sonntag unsere neun Planeten.",
+        'Akronyme': "KISS - Keep it simple and stupid",
+        'Merkgeschichten': "Der König hat 12 Söhne. Der erste Sohn heißt 1, der zweite Sohn heißt 2, der dritte Sohn heißt 3, der vierte Sohn heißt 4, der fünfte Sohn heißt 5, der sechste Sohn heißt 6, der siebte Sohn heißt 7, der achte Sohn heißt 8, der neunte Sohn heißt 9, der zehnte Sohn heißt 10, der elfte Sohn heißt 11, der zwölfte Sohn heißt 12.",
+        'Merkreime': "30 Tage hat September, April, Juni und November. Alle anderen haben 31, außer Februar, der hat 28.",
+        'Merkregeln': "Die Summe der Innenwinkel eines Dreiecks beträgt 180°.",
+        'Merkformeln': "a² + b² = c²",
+        'Method of Loci': "Ich stelle mir vor, wie ich durch mein Haus laufe und an jedem Ort etwas abgefahrenes sehe, was ich mir merken kann.",
+        }
+    length = len(mnemonic_dictionary)
+    random_number = randint(0, length - 1)
+    key = list(mnemonic_dictionary.keys())[random_number]
+    value = mnemonic_dictionary[key]
+    
+    return f'### {key} 🧠:\n>"_{value}_"'
 
 class Doc:
     def __init__(self, filenameWithExtension, example):
@@ -36,7 +54,7 @@ class Doc:
         elif page_number >= len(self.pdf):
             page_number = len(self.pdf) - 1
         self.current_page_number = page_number
-        return (self.pdf[page_number], self.example)
+        return (self.pdf[page_number], self.example.replace("### Mnemonic 🧠:", random_mnemonic()))
 
     def get_pages(self, page_number_start, page_number_end):
         if page_number_start < 0:
@@ -45,15 +63,15 @@ class Doc:
             page_number_end = len(self.pdf) - 1
         
         self.current_page_number = page_number_end
-        return ("\n".join(self.pdf[page_number_start:page_number_end + 1]), self.example)
+        return ("\n".join(self.pdf[page_number_start:page_number_end + 1]), self.example.replace("### Mnemonic 🧠:", random_mnemonic()))
 
     def get_next_page(self):
         self.current_page_number += 1
-        return (self.get_page(self.current_page_number), self.example)
+        return (self.get_page(self.current_page_number), self.example.replace("### Mnemonic 🧠:", random_mnemonic()))
 
     def search_section(self, section_name):
         pdf_sections = [page for page in self.pdf if section_name in page]
-        return (pdf_sections, self.example)
+        return (pdf_sections, self.example.replace("### Mnemonic 🧠:", random_mnemonic()))
 
 def start_chat(choice, additional_info):
   design = ""
@@ -84,82 +102,55 @@ def start_chat(choice, additional_info):
     3. '📑 + Dokument' -> Module ignorieren, Dokument analysieren und daraus Roadmap erstellen
     4. '📝 + Frage' -> Frage stellen und Antwort erhalten
     5. '📚 + Modul' -> Modul auswählen"""
-  examples = [
-    """## {Thema + Emoji}
-    ### Definition 📝:
-    {Definition des Themas als Liste mit Begriffen und Erklärungen}
+  message_explanation = """### Definition 📝:
+    {Definition des Themas oder Konzepts}
+
+    ### Ausführliche Erklärung: 📖
+    {Detaillierte Erklärung aller Informationen, inklusive aller Fachbegriffe, Formeln und Rechenwegen}
 
     ### Einfache Erklärung 🧩:
-    {Erklärung des Themas so einfach wie möglich}
+    {So einfach wie möglich, aber dennoch vollständig}
 
-    ### Praktische Beispiele 🧑‍💻:
-    {Beispiele für das Thema als Liste mit Begriffen und Erklärungen}
+    ### Praktisches Beispiel 🧑‍💻:
+    {Beispiel, welches das Thema/Konzept veranschaulicht}
 
-    ### Mathematische Beispiele 🧮:
-    {Beispielrechnungen Schritt für Schritt erklärt}
+    ### Mnemonic 🧠:
+    {Mnemonic, wodurch die Inhalte leichter zu merken sind}
 
-    ### Merksätze 🧠:
-    {Merksätze für das Thema}
-
-    ### Formeln 🧮:
-    {Formeln für das Thema in LaTeX-Syntax}
-
-    ### Codebeispiele 🖥️:
-    {Codebeispiele für das Thema in Python-Syntax}
-
-    ### Übungsaufgaben 📝:
-    {Übungsaufgaben für das Thema}
-
+    ### Formelsammlung 🧮:
+    {ALLE Formeln/Gleichungen in LaTeX-Syntax mit Erklärung}"""
+  examples = [
+    f"""## Thema + Emoji
+    {message_explanation}
+    
     ---
 
     ### Befehle 🤖:
     1. '🔍': Mehr zu dem Thema erfahren
     2. '⏩': Weiter
     3. '❓ + Frage': Frage stellen
-    4. '🧩': Musterbeispiel für Prüfung geben (so muss ich dann in der Prüfung antworten)
-    5. '🗣️': Nochmal für Dummies erklären
-    6. '🎮': Nochmal für Gamer erklären
-    7. '👶': Nochmal für Kinder erklären
-    8. '📈': Diagramm mit Python generieren""",
-    """## {Thema + Emoji}
-    ### Definition 📝:
-    {Definition des Themas als Liste mit Begriffen und Erklärungen}
-
-    ### Einfache Erklärung 🧩:
-    {Erklärung des Themas so einfach wie möglich}
-
-    ### Praktische Beispiele 🧑‍💻:
-    {Beispiele für das Thema als Liste mit Begriffen und Erklärungen}
-
-    ### Mathematische Beispiele 🧮:
-    {Beispielrechnungen Schritt für Schritt erklärt}
-
-    ### Merksätze 🧠:
-    {Merksätze für das Thema}
-
-    ### Formeln 🧮:
-    {Formeln für das Thema in LaTeX-Syntax}
-
-    ### Codebeispiele 🖥️:
-    {Codebeispiele für das Thema in Python-Syntax}
-
-    ### Übungsaufgaben 📝:
-    {Übungsaufgaben für das Thema}
-
+    4. '🧩': Musterbeispiel für Prüfung geben
+    5. '🖥️': Ausführliches Codebeispiel, welches das Thema vollständig abdeckt
+    6. '🧮': Beispielrechnungen mit Schritt für Schritt Erklärung
+    7. '🗣️': Nochmal für Dummies erklären
+    8. '📈': Diagramm mit Python plotten""",
+    f"""## Thema + Emoji
+    {message_explanation}
+    
     ---
 
     ### Befehle 🤖:
     1. '🔎': Noch tiefer in das Thema eintauchen!
     2. '⏩': Weiter mit nächster Seite -> `doc.get_next_page()`
     3. '⏩ + page(s)': Weiter mit angegebener Seite
-        -> `doc.get_page(page_number)`
-        -> `doc.get_pages(page_number_start, page_number_end)`
+        -> `doc.get_page(x)`
+        -> `doc.get_pages(x, y)`
     4. '❓ + Frage': Frage stellen
-    5. '🧩': Musterbeispiel für Prüfung geben (so muss ich dann in der Prüfung antworten)
-    6. '🗣️': Nochmal für Dummies erklären
-    7. '🎮': Nochmal für Gamer erklären
-    8. '👶': Nochmal für Kinder erklären
-    9. '📈': Diagramm mit Python generieren""",
+    5. '🧩': Musterbeispiel für Prüfung geben
+    6. '🖥️': Ausführliches Codebeispiel, welches das Thema vollständig abdeckt
+    7. '🧮': Beispielrechnungen mit Schritt für Schritt Erklärung
+    8. '🗣️': Nochmal für Dummies erklären
+    9. '📈': Diagramm mit Python plotten""",
     """## 📑 Dokument analysiert
     ### {Name des Dokuments} 📑:
     {Beschreibung des Dokuments}
@@ -383,9 +374,9 @@ def start_chat(choice, additional_info):
     design = examples[2]
   elif choice == '🗺️ ROADMAP':
     content = roadmaps[additional_info]
-    design = examples[0]
+    design = examples[0].replace("### Mnemonic 🧠:", random_mnemonic())
   else:
     content = start
-    design = examples[0]
+    design = examples[0].replace("### Mnemonic 🧠:", random_mnemonic())
     
   return {"design_template": design, "content": content}
