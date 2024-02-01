@@ -35,6 +35,13 @@
 
 ---
 
+### Befehle 🤖
+
+1. '🚀' -> Unterricht mit {first_topic} beginnen
+2. '📜 + Themenliste' -> Mit eigener Themenliste beginnen
+
+---
+
 ## 🗺️ Roadmap: Webtechnologien
 
 ### Motivation 🥇
@@ -75,6 +82,13 @@
 - Verstehen, wie man Webseiten für verschiedene Geräte optimiert.
 - Erlernen der Grundlagen der Backend-Entwicklung, einschließlich PHP und Datenbankzugriff.
 - Verstehen der Sicherheits- und Performance-Aspekte von Webanwendungen.
+
+---
+
+### Befehle 🤖
+
+1. '🚀' -> Unterricht mit {first_topic} beginnen
+2. '📜 + Themenliste' -> Mit eigener Themenliste beginnen
 
 ---
 
@@ -187,5 +201,5 @@
 
 ### Befehle 🤖
 
-1. '🚀' -> Unterricht mit Datenbankmanagementsystemen beginnen
+1. '🚀' -> Unterricht mit {first_topic} beginnen
 2. '📜 + Themenliste' -> Mit eigener Themenliste beginnen
