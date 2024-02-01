@@ -15,8 +15,11 @@ def get_roadmap(section_name):
     return chosen_section
 
 class Doc:
-    def __init__(self, filenameWithExtension):
+    def __init__(self, filenameWithExtension, example):
         self.current_page_number = 0
+
+        self.example = example
+        
         (self.pdf, self.page_count) = self.init_doc(filenameWithExtension)
 
     def init_doc(self, filenameWithExtension):
@@ -27,7 +30,6 @@ class Doc:
         doc.close()
 
         return (full_pdf, page_count)
-
 
     def get_summary(self):
         preview = list(set([page[:page.find('\n')] for page in self.pdf]))
@@ -45,10 +47,8 @@ class Doc:
             page_number = 0
         elif page_number >= len(self.pdf):
             page_number = len(self.pdf) - 1
-        
         self.current_page_number = page_number
-        
-        return self.pdf[page_number]
+        return (self.pdf[page_number], self.example)
 
     def get_pages(self, page_number_start, page_number_end):
         if page_number_start < 0:
@@ -57,13 +57,12 @@ class Doc:
             page_number_end = len(self.pdf) - 1
         
         self.current_page_number = page_number_end
-        
-        return "\n".join(self.pdf[page_number_start:page_number_end + 1])
+        return ("\n".join(self.pdf[page_number_start:page_number_end + 1]), self.example)
 
     def get_next_page(self):
         self.current_page_number += 1
-        return self.get_page(self.current_page_number)
+        return (self.get_page(self.current_page_number), self.example)
 
     def search_section(self, section_name):
         pdf_sections = [page for page in self.pdf if section_name in page]
-        return pdf_sections
+        return (pdf_sections, self.example)
