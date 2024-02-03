@@ -1,14 +1,16 @@
 import pandas as pd
 from random import randint
 import fitz
+import sys
+sys.path.insert(0, '/mnt/data')
 
 doc = None
 
-COMMANDS = pd.read_csv('/mnt/data/commands.csv').set_index('Command')['Description'].to_dict()
-NEXTMAP = pd.read_csv('/mnt/data/next_coms.csv').set_index('Command')['Next'].to_dict()
-SEC = pd.read_csv('/mnt/data/sections.csv').set_index('Section')['Template'].to_dict()
-MNEMONICS = pd.read_csv('/mnt/data/mnemonics.csv').set_index('Mnemonic')['Example'].to_dict()
-RESPONSES = pd.read_csv('/mnt/data/responseMap.csv').set_index('Command')['Response'].to_dict()
+COMMANDS = pd.read_csv('commands.csv').set_index('Command')['Description'].to_dict()
+NEXTMAP = pd.read_csv('next_coms.csv').set_index('Command')['Next'].to_dict()
+SEC = pd.read_csv('sections.csv').set_index('Section')['Template'].to_dict()
+MNEMONICS = pd.read_csv('mnemonics.csv').set_index('Mnemonic')['Example'].to_dict()
+RESPONSES = pd.read_csv('responseMap.csv').set_index('Command')['Response'].to_dict()
 
 def get_design(input):
     template = SEC["title"]
