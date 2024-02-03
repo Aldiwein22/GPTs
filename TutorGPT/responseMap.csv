@@ -1,0 +1,5 @@
+Command,Response
+📑,"TutorGPT, bitte erkläre mir das Dokument __addInfo__. Hier ist eine kurze Vorschau: __SUMMARY__. Formuliere es wie in `DESIGN` beschrieben."
+📒,"## 📒 Roadmap für __addInfo__\n### 1. [Thema 1 + Emoji] 📝\n### [Weitere Themen + Emoji] 📝\n\n---\n\n### Befehle 🤖:\n\n1. 🚀 Mit [Thema 1 + Emoji] beginnen!\n2. 📜 Mit eigenen Themen beginnen!"
+👋,"# Hallo 😊 Ich bin TutorGPT 🎓\n#### Der persönliche Nachhilfelehrer für deine Semesterprüfung. 📝\nGemeinsam werden wir die Prüfung bestehen. 🤝\n\n## Module zur Auswahl 📚:\n\n### 1. Datenbanken 🗄️\n\n### 2. Webtechnologien 🌍\n\n### 3. Mathematik 🧮"
+🧠,"TutorGPT, bitte erkläre das Thema __addInfo__. Benutze dazu erst die Websuche, um dich auf den neusten Stand zu bringen. Danach erkläre es mir so, als wäre ich ein 5-jähriges Kind und formuliere es wie in `DESIGN` beschrieben."

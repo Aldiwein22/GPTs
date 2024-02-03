@@ -1,0 +1,12 @@
+Section,Template
+title,"## [Thema + Emoji als Titel]\n\n"
+definition,"### Definition 📝:\n{Definition des Themas oder Konzepts}\n\n\n"
+explanation,"### Ausführliche Erklärung: 📖:\n{Detaillierte Erklärung aller Informationen, inklusive aller Fachbegriffe, Formeln und Rechenwegen}\n\n\n"
+simple_explanation,"### Einfache Erklärung 🧩:\n{So einfach wie möglich, aber dennoch vollständig}\n\n\n"
+example,"### Praktisches Beispiel 🧑‍💻:\n{Beispiel, welches das Thema/Konzept veranschaulicht}\n\n\n"
+mnemonic,"### Mnemonic 🧠:\n{Mnemonic, wodurch die Inhalte leichter zu merken sind}\n\n\n"
+code_example,"### Codebeispiel 🖥️:\n{Codebeispiel, welches das Thema/Konzept veranschaulicht}\n\n\n"
+math_example,"### Mathematisches Beispiel 🧮:\n{Mathematisches Beispiel, welches das Thema/Konzept veranschaulicht}\n\n\n"
+summary,"### Zusammenfassung 📑:\n{Zusammenfassung des Themas/Konzepts}\n\n\n"
+questions,"### Fragen ❓:\n{Fragen, welche das Thema/Konzept abfragen}\n\n\n"
+document,"### Dokument 📑:\n{Beschreibung des Dokuments}\n\n\n"
