@@ -1,45 +1,14 @@
-import fitz
 import pandas as pd
 from random import randint
+import fitz
+
+doc = None
 
 COMMANDS = pd.read_csv('/mnt/data/commands.csv').set_index('Command')['Description'].to_dict()
 NEXTMAP = pd.read_csv('/mnt/data/next_coms.csv').set_index('Command')['Next'].to_dict()
 SEC = pd.read_csv('/mnt/data/sections.csv').set_index('Section')['Template'].to_dict()
 MNEMONICS = pd.read_csv('/mnt/data/mnemonics.csv').set_index('Mnemonic')['Example'].to_dict()
 RESPONSES = pd.read_csv('/mnt/data/responseMap.csv').set_index('Command')['Response'].to_dict()
-
-doc = None
-
-class Doc:
-    def __init__(self, fName):
-        global get_design
-        self.fName = fName if '.' in fName else fName + '.pdf'
-        self.current = 0
-        self.pdf, self.page_count = self.init_doc(self.fName)
-
-    def init_doc(self, fName):
-        with fitz.open('/mnt/data/' + fName) as doc:
-            full_pdf = [page.get_text() for page in doc]
-            page_count = doc.page_count
-        return full_pdf, page_count
-
-    def get_summary(self):
-        return list(set(page.split('\n', 1)[0] for page in self.pdf))
-
-    def get_page(self, page_number):
-        self.current = max(0, min(page_number, len(self.pdf) - 1))
-        return self.pdf[self.current], get_design("⏭️")
-
-    def get_pages(self, start, end):
-        self.current = min(end, len(self.pdf) - 1)
-        return "\n".join(self.pdf[start:self.current + 1]), get_design("⏭️")
-
-    def get_next_page(self):
-        self.current += 1
-        return self.get_page(self.current)
-
-    def search_section(self, section_name):
-        return [page for page in self.pdf if section_name in page], get_design("⏭️")
 
 def get_design(input):
     template = SEC["title"]
@@ -61,6 +30,39 @@ def get_design(input):
     template = template.replace("### Mnemonic 🧠:", get_mnemonic())
     
     return template
+
+class Doc:
+    def __init__(self, addInfo):
+        self.pdf = fitz.open('/mnt/data/' + addInfo)
+        self.current = 0
+        self.summary = self.get_summary()
+        self.design = get_design("⏭️")
+
+    def get_summary(self):
+        s = ""
+        for i, page in enumerate(self.pdf):
+            s += "Page " + str(i+1) + ": " + page.get_text()[:10]
+        return s
+
+    def get_page(self, page_number):
+        self.current = max(0, min(page_number, self.pdf.page_count - 1))
+        return (self.pdf[self.current].get_text(), self.design)
+
+    def get_pages(self, start, end):
+        self.current = min(end, self.pdf.page_count - 1)
+        ps = self.pdf[start:self.current + 1]
+        return ("\n".join([page.get_text() for page in ps]), self.design)
+
+    def get_next_page(self):
+        self.current += 1
+        return self.get_page(self.current)
+
+    def search_section(self, section_name):
+        pages = []
+        for page in self.pdf:
+            if section_name in page.get_text():
+                pages.append(page.get_text())
+        return (pages, self.design)
 
 def get_next_coms(last_command):
     returnList = []
@@ -85,12 +87,12 @@ def get_mnemonic():
 
 def start_chat(input, addInfo):
     template = get_design(input)
-    response = RESPONSES.get(input[0], f"Entschuldigung, ich habe das nicht verstanden.\n\nBitte wähle eine der folgenden Optionen: 📑, 📒, 🧠, 👋")
+    response = RESPONSES.get(input[0], f"Optionen: 📑, 📒, 🧠, 👋")
     content = response.replace("__addInfo__", addInfo)
     
     if '📑' in input:
         global doc
         doc = Doc(addInfo)
-        content = content.replace("__summary__", doc.get_summary())
+        content = content.replace("__SUMMARY__", doc.summary)
     
     return {"design_template": template, "content": content}
